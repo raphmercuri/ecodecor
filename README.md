@@ -29,6 +29,7 @@ ecodecor/
 │   └── scripts.js
 └── README.md
 
+```
 How to Run the Project
 
 Por se tratar de um projeto puramente estático (Client-side), não há necessidade de processos de build ou instalação de dependências via Node.js.
