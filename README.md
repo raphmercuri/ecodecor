@@ -28,3 +28,21 @@ ecodecor/
 ├── js/
 │   └── scripts.js
 └── README.md
+
+How to Run the Project
+
+Por se tratar de um projeto puramente estático (Client-side), não há necessidade de processos de build ou instalação de dependências via Node.js.
+
+    Faça o Clone do repositório:
+
+Bash
+
+git clone <your-repository-url>
+
+    Navegue até o diretório do projeto:
+
+Bash
+
+cd ecodecor
+
+    Abra o arquivo index.html diretamente em seu navegador web. Alternativamente, utilize uma extensão como o Live Server no VS Code para uma experiência de desenvolvimento com hot-reload.
