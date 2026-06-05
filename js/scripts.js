@@ -232,3 +232,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+// Adicione este trecho dentro do seu DOMContentLoaded
+const images = document.querySelectorAll('.portfolio-item img');
+images.forEach(img => {
+    if (img.complete) {
+        img.parentElement.classList.add('loaded');
+    } else {
+        img.addEventListener('load', () => {
+            img.parentElement.classList.add('loaded');
+        });
+    }
+});
