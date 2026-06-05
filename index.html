@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EcoDecor - Design consciente e sustentável para arquitetura de interiores.">
+    <title>EcoDecor | Decoração Sustentável</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">EcoDecor</div>
+            <button class="hamburger-menu" id="mobile-menu" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="navbar" id="primary-navigation">
+                <ul class="nav-list">
+                    <li><a href="#hero" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">Sobre Nós</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfólio</a></li>
+                    <li><a href="#contact" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="container hero-content">
+                <h1 class="hero-title">Design Consciente para o seu Espaço</h1>
+                <p class="hero-subtitle">Transformamos ambientes com peças ecológicas e sustentáveis, aliando beleza à responsabilidade ambiental.</p>
+                <a href="#portfolio" class="btn-cta">Ver Projetos</a>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio-section">
+            <div class="container">
+                <h2>Portefólio e Projetos</h2>
+                
+                <div class="portfolio-filters" aria-label="Filtros de categorias de projetos">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="residential">Residencial</button>
+                    <button class="filter-btn" data-filter="corporate">Corporativo</button>
+                    <button class="filter-btn" data-filter="consulting">Consultoria</button>
+                </div>
+
+                <div class="portfolio-grid">
+                    <article class="portfolio-item" tabindex="0" data-id="1" data-category="residential">
+                        <img src="https://i.ibb.co/RGDFr5Lx/saladeestarorganica.jpg" alt="Sala de estar com decoração orgânica e plantas" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Projeto Sala de Estar Orgânica</h3>
+                        </div>
+                    </article>
+                    <article class="portfolio-item" tabindex="0" data-id="2" data-category="corporate">
+                        <img src="https://i.ibb.co/V6NV1Dm/escritorioverde.jpg" alt="Escritório com iluminação natural e plantas" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Projeto Escritório Verde</h3>
+                        </div>
+                    </article>
+                    <article class="portfolio-item" tabindex="0" data-id="3" data-category="residential">
+                        <img src="https://i.ibb.co/HLYJWv1k/quartominimalista.jpg" alt="Quarto minimalista com tons claros" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Projeto Quarto Minimalista</h3>
+                        </div>
+                    </article>
+                    <article class="portfolio-item" tabindex="0" data-id="4" data-category="residential">
+                        <img src="https://i.ibb.co/nM9ZXr0b/varanda-botanica.jpg" alt="Varanda botânica cheia de plantas" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Projeto Varanda Botânica</h3>
+                        </div>
+                    </article>
+                    <article class="portfolio-item" tabindex="0" data-id="5" data-category="residential">
+                        <img src="https://i.ibb.co/sdWC5J1g/interiores.jpg" alt="Design de interiores sustentável" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Design de Interiores Eco</h3>
+                        </div>
+                    </article>
+                    <article class="portfolio-item" tabindex="0" data-id="6" data-category="consulting">
+                        <img src="https://i.ibb.co/wqpzQZd/consultoria.jpg" alt="Consultoria de materiais sustentáveis" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Consultoria Sustentável</h3>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer-section">
+        <div class="container footer-content">
+            <div class="contact-info">
+                <h2>Entre em Contato</h2>
+                <p>Inicie o seu projeto sustentável conosco.</p>
+            </div>
+            <form id="contact-form" class="contact-form" novalidate>
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" required aria-describedby="name-error">
+                    <span class="error-msg" id="name-error" aria-live="polite"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required aria-describedby="email-error">
+                    <span class="error-msg" id="email-error" aria-live="polite"></span>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensagem</label>
+                    <textarea id="message" name="message" rows="4" required aria-describedby="message-error"></textarea>
+                    <span class="error-msg" id="message-error" aria-live="polite"></span>
+                </div>
+                <button type="submit" class="btn-cta">Enviar</button>
+                <div id="form-feedback" class="form-feedback" aria-live="polite"></div>
+            </form>
+        </div>
+    </footer>
+
+    <!-- Modal Element -->
+    <dialog id="project-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal-btn" aria-label="Close modal">&times;</button>
+            <div class="modal-body">
+                <img id="modal-image" src="" alt="">
+                <div class="modal-text">
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-description"></p>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

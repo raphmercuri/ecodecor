@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nossa história - EcoDecor. Descubra nossas raízes e o processo sustentável.">
+    <title>Sobre Nós | EcoDecor</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">EcoDecor</div>
+            <button class="hamburger-menu" id="mobile-menu" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="navbar" id="primary-navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link" aria-current="page">Sobre Nós</a></li>
+                    <li><a href="index.html#portfolio" class="nav-link">Portfólio</a></li>
+                    <li><a href="#contact" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section about-hero">
+            <div class="container hero-content">
+                <h1 class="hero-title">Nossa História</h1>
+                <p class="hero-subtitle">Raízes sustentáveis para um futuro mais verde no design de interiores.</p>
+            </div>
+        </section>
+
+        <section class="story-timeline">
+            <div class="container">
+                <div class="reveal-section story-block">
+                    <div class="story-visual">
+                        <svg class="leaf-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
+                        </svg>
+                    </div>
+                    <div class="story-text">
+                        <h2>A Semente da Ideia</h2>
+                        <p>A EcoDecor nasceu da observação do desperdício na construção civil e arquitetura. Iniciamos nossas operações com o objetivo de provar que o design de alto padrão não precisa custar a saúde do nosso planeta.</p>
+                    </div>
+                </div>
+
+                <div class="reveal-section story-block reverse">
+                    <div class="story-visual">
+                        <svg class="leaf-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
+                        </svg>
+                    </div>
+                    <div class="story-text">
+                        <h2>Materiais com Propósito</h2>
+                        <p>Estabelecemos parcerias exclusivas com produtores de madeira de reflorestamento e artesãos locais. Cada material é selecionado através de um rigoroso processo de auditoria ambiental.</p>
+                    </div>
+                </div>
+
+                <div class="reveal-section story-block">
+                    <div class="story-visual">
+                        <svg class="leaf-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" />
+                        </svg>
+                    </div>
+                    <div class="story-text">
+                        <h2>O Futuro que Desenhamos</h2>
+                        <p>Atualmente, 100% dos nossos projetos neutralizam sua pegada de carbono. Continuamos inovando com tecnologias de integração biofílica para criar lares que respiram.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer-section">
+        <div class="container footer-content">
+            <div class="contact-info">
+                <h2>Entre em Contato</h2>
+                <p>Inicie o seu projeto sustentável conosco.</p>
+            </div>
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensagem</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn-cta">Enviar</button>
+                <div id="form-feedback" class="form-feedback" aria-live="polite"></div>
+            </form>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
