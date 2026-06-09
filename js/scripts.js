@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Menu Toggle & Accessibility
     const mobileMenu = document.getElementById('mobile-menu');
     const navbar = document.getElementById('primary-navigation');
 
@@ -8,8 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const isExpanded = mobileMenu.getAttribute('aria-expanded') === 'true';
             mobileMenu.setAttribute('aria-expanded', !isExpanded);
             navbar.classList.toggle('active');
-            
-            // Hamburger animation
             mobileMenu.classList.toggle('is-active');
             const bars = mobileMenu.querySelectorAll('.bar');
             if (mobileMenu.classList.contains('is-active')) {
@@ -23,8 +20,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    const whatsappBtn = document.getElementById('whatsapp-demo');
+    const toastNotification = document.getElementById('toast-notification');
 
-    // Modal Portfolio Logic
+    if (whatsappBtn && toastNotification) {
+        whatsappBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            toastNotification.classList.add('show');
+            setTimeout(() => {
+                toastNotification.classList.remove('show');
+            }, 3500);
+        });
+    }
     const projectsData = {
         '1': {
             title: 'Projeto Sala de Estar Orgânica',
@@ -80,8 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
         item.addEventListener('click', () => {
             openModal(item.getAttribute('data-id'));
         });
-        
-        // Acessibilidade: permitir abrir com a tecla Enter
         item.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
                 openModal(item.getAttribute('data-id'));
@@ -94,8 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.close();
         });
     }
-
-    // Fechar modal ao clicar fora
     if (modal) {
         modal.addEventListener('click', (e) => {
             const dialogDimensions = modal.getBoundingClientRect();
@@ -110,18 +113,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-// --- Scroll Animations (Intersection Observer) ---
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.2 // Dispara quando 20% do elemento estiver visível
+        threshold: 0.2
     };
 
     const scrollObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                // Interrompe a observação após a animação ocorrer a primeira vez
                 observer.unobserve(entry.target); 
             }
         });
@@ -131,13 +132,11 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => {
         scrollObserver.observe(el);
     });
-// Portfolio Filter Logic
     const filterBtns = document.querySelectorAll('.filter-btn');
     const portfolioItemsDOM = document.querySelectorAll('.portfolio-item');
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Update active state
             document.querySelector('.filter-btn.active').classList.remove('active');
             btn.classList.add('active');
 
@@ -155,13 +154,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     item.classList.add('fade-out');
                     setTimeout(() => {
                         item.classList.add('hidden');
-                    }, 400); // Equivale à duração da transição no CSS
+                    }, 400);
                 }
             });
         });
     });
 
-    // Inline Form Validation
     const formInputs = document.querySelectorAll('#contact-form input, #contact-form textarea');
 
     const validateField = (field) => {
@@ -204,7 +202,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Update submit event to use inline validation check
     const mainForm = document.getElementById('contact-form');
     const mainFeedback = document.getElementById('form-feedback');
 
@@ -232,7 +229,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-// Adicione este trecho dentro do seu DOMContentLoaded
 const images = document.querySelectorAll('.portfolio-item img');
 images.forEach(img => {
     if (img.complete) {

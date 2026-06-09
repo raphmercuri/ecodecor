@@ -1,4 +1,4 @@
-/* Custom Properties */
+
 :root {
     --color-base: #F9F8F6;
     --color-primary: #2A3A2C;
@@ -8,7 +8,7 @@
     --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Reset */
+
 * {
     margin: 0;
     padding: 0;
@@ -32,7 +32,7 @@ body {
     padding: 0 2rem;
 }
 
-/* Header & Navigation */
+
 .header {
     background-color: var(--color-base);
     position: fixed;
@@ -56,8 +56,8 @@ body {
 }
 
 .logo img {
-    height: 50px; /* Define a altura máxima do ícone no cabeçalho */
-    width: auto; /* Mantém a proporção original da imagem (2816x1536) */
+    height: 50px;
+    width: auto;
     object-fit: contain;
 }
 
@@ -91,33 +91,71 @@ body {
     background-color: var(--color-primary);
     transition: all 0.3s ease;
 }
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
 
-/* Hero Section */
+.hero-bg.image-bg {
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-bg.video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .hero-section {
-    padding-top: 120px;
+    position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background-color: var(--color-primary);
-    color: var(--color-text-light);
+    justify-content: center;
     text-align: center;
+    color: #ffffff;
+    padding-top: 0;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8));
+    z-index: 2;
 }
 
 .hero-content {
+    position: relative;
+    z-index: 3;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
+    max-width: 900px;
+    padding: 0 2rem;
 }
 
 .hero-title {
-    font-size: 3rem;
+    font-size: 3.5rem;
     line-height: 1.2;
+    font-weight: 300;
+    letter-spacing: 1px;
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
-    max-width: 600px;
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
 }
 
 .btn-cta {
@@ -137,7 +175,7 @@ body {
     background-color: var(--color-cta-hover);
 }
 
-/* About Section */
+
 .about-section {
     padding: 5rem 0;
     background-color: var(--color-base);
@@ -148,10 +186,9 @@ body {
     font-size: 2rem;
 }
 
-/* Portfolio Section */
+
 .portfolio-section {
-    padding: 5rem 0;
-    background-color: #ffffff;
+    padding: 8rem 0;
 }
 
 .portfolio-section h2 {
@@ -162,24 +199,16 @@ body {
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.5rem;
 }
 
 .portfolio-item {
-    background-color: var(--color-base);
-    height: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    font-weight: bold;
-    text-align: center;
-    padding: 1rem;
+    border-radius: 0px;
+    border: none;
+    box-shadow: none;
 }
 
-/* Footer & Contact Section */
 .footer-section {
     background-color: var(--color-primary);
     color: var(--color-text-light);
@@ -220,8 +249,6 @@ body {
     font-size: 0.9rem;
     display: none;
 }
-
-/* Media Queries */
 @media (max-width: 768px) {
     .nav-list {
         display: none;
@@ -253,8 +280,6 @@ body {
         gap: 2rem;
     }
 }
-
-/* Custom Properties */
 :root {
     --color-base: #F9F8F6;
     --color-primary: #2A3A2C;
@@ -263,8 +288,6 @@ body {
     --color-text-light: #ffffff;
     --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-/* Reset & Accessibility */
 * {
     margin: 0;
     padding: 0;
@@ -281,8 +304,6 @@ body {
     color: var(--color-primary);
     line-height: 1.6;
 }
-
-/* Teclado Focus Visível */
 :focus-visible {
     outline: 3px solid var(--color-cta);
     outline-offset: 4px;
@@ -293,8 +314,6 @@ body {
     margin: 0 auto;
     padding: 0 2rem;
 }
-
-/* Header & Navigation */
 .header {
     background-color: var(--color-base);
     position: fixed;
@@ -354,8 +373,6 @@ body {
     background-color: var(--color-primary);
     transition: all 0.3s ease;
 }
-
-/* Hero Section */
 .hero-section {
     padding-top: 120px;
     min-height: 100vh;
@@ -400,7 +417,7 @@ body {
     background-color: var(--color-cta-hover);
 }
 
-/* Portfolio Section */
+
 .portfolio-section {
     padding: 5rem 0;
     background-color: #ffffff;
@@ -411,13 +428,6 @@ body {
     margin-bottom: 3rem;
     font-size: 2rem;
 }
-
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-}
-
 .portfolio-item {
     position: relative;
     overflow: hidden;
@@ -456,7 +466,7 @@ body {
     transform: translateY(0);
 }
 
-/* Footer Section */
+
 .footer-section {
     background-color: var(--color-primary);
     color: var(--color-text-light);
@@ -489,7 +499,6 @@ body {
     font-family: inherit;
 }
 
-/* Modal Styling */
 .modal {
     margin: auto;
     border: none;
@@ -532,7 +541,6 @@ body {
     border-radius: 4px;
 }
 
-/* Media Queries */
 @media (max-width: 768px) {
     .navbar {
         display: none;
@@ -572,7 +580,6 @@ body {
         gap: 2rem;
     }
 }
-/* --- About Page Styles & Animations --- */
 
 .about-hero {
     min-height: 60vh;
@@ -610,14 +617,12 @@ body {
     margin-bottom: 1rem;
 }
 
-/* Base state para Intersection Observer */
 .reveal-section {
     opacity: 0;
     transform: translateY(60px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* Animação do SVG (Folha Fechada/Pequena) */
 .leaf-svg {
     width: 150px;
     height: 150px;
@@ -627,7 +632,6 @@ body {
     transition: transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.8s ease-in;
 }
 
-/* Estados Ativos após scroll (Trigger via JS) */
 .reveal-section.is-visible {
     opacity: 1;
     transform: translateY(0);
@@ -638,7 +642,6 @@ body {
     transform: scale(1) rotate(0deg);
 }
 
-/* Media Query para About Page */
 @media (max-width: 768px) {
     .story-block, 
     .story-block.reverse {
@@ -647,7 +650,7 @@ body {
         gap: 2rem;
     }
 }
-/* Portfolio Filters */
+
 .portfolio-filters {
     display: flex;
     justify-content: center;
@@ -686,7 +689,6 @@ body {
     transform: scale(0.9);
 }
 
-/* Form Validation */
 .form-group input,
 .form-group textarea {
     transition: border-color 0.3s ease;
@@ -713,7 +715,7 @@ body {
 .error-msg.active {
     display: block;
 }
-/* Efeito de carregamento para os cards do portfólio */
+
 .portfolio-item {
     background: linear-gradient(90deg, #ecebe9 25%, #f3f2f0 37%, #ecebe9 63%);
     background-size: 400% 100%;
@@ -725,7 +727,6 @@ body {
     transition: opacity 0.3s ease-in-out;
 }
 
-/* Quando a imagem terminar de carregar, o JS adiciona essa classe */
 .portfolio-item.loaded {
     animation: none;
     background: none;
@@ -738,4 +739,94 @@ body {
 @keyframes skeleton-loading {
     0% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+}
+
+.btn-cta.ghost-btn {
+    background-color: transparent;
+    color: var(--color-cta);
+    border: 1px solid var(--color-cta);
+    padding: 1.2rem 3.5rem;
+    border-radius: 0px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-cta.ghost-btn:hover {
+    background-color: var(--color-cta);
+    color: #ffffff;
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366;
+    color: #ffffff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.08);
+}
+
+@media (max-width: 1024px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.toast-notification {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    z-index: 10000;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.toast-notification.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 768px) {
+    .toast-notification {
+        width: 90%;
+        white-space: normal;
+    }
+}
+.toast-notification {
+    pointer-events: none;
+}
+
+.toast-notification.show {
+    pointer-events: auto;
 }
