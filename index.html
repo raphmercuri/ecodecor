@@ -134,8 +134,6 @@
             </form>
         </div>
     </footer>
-
-    <!-- Modal Element -->
     <dialog id="project-modal" class="modal">
         <div class="modal-content">
             <button class="close-modal" id="close-modal-btn" aria-label="Close modal">&times;</button>
@@ -144,6 +142,17 @@
                 <div class="modal-text">
                     <h2 id="modal-title"></h2>
                     <p id="modal-description"></p>
+                    
+                    <div class="modal-tech-sheet">
+                        <ul id="modal-tech-list">
+                            <li><strong>Área Atendida:</strong> <span id="modal-area"></span></li>
+                            <li><strong>Impacto Ecológico:</strong> <span id="modal-impact"></span></li>
+                            <li><strong>Tempo de Execução:</strong> <span id="modal-time"></span></li>
+                            <li><strong>Materiais Principais:</strong> <span id="modal-materials"></span></li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#contact" class="btn-cta ghost-btn modal-cta" id="modal-cta-btn">Quero um Projeto Semelhante</a>
                 </div>
             </div>
         </div>
